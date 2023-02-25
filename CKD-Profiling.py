@@ -6,8 +6,8 @@ Created on Fri Aug 12 12:32:53 2022
 """
 import pandas as pd
 import streamlit as st
-import pandas_profiling
-import streamlit_pandas_profiling
+import pandas_profiling as pp
+import streamlit_pandas_profiling as spp
 #from pandas_profiling import ProfileReport
 #from streamlit_pandas_profiling import st_profile_report
 
@@ -29,13 +29,13 @@ if option=='Load a dataset':
                                on_change=None, args=None, kwargs=None, disabled=False)
     if uploaded_file is not None:
          df = pd.read_csv(uploaded_file)
-         pr = pandas_profiling.ProfileReport(df, explorative=True)
+         pr = pp.ProfileReport(df, explorative=True)
          st.header('**Dataset:**')
          st.write(df)
          if st.sidebar.button('Generate Report'):
             st.write('---')
             st.header('**Pandas Profiling Report**')
-            streamlit_pandas_profiling.st_profile_report(pr)
+            spp.st_profile_report(pr)
     
          
 
@@ -44,23 +44,23 @@ if option=='Use example dataset':
      ('Diabetes dataset','Chronic Kidney Disease Dataset' ))
     if option=='Diabetes dataset': 
         df=pd.read_csv('diabetes.csv')
-        pr = pandas_profiling.ProfileReport(df, explorative=True)
+        pr = pp.ProfileReport(df, explorative=True)
         st.header('**Dataset:**')
         st.write(df)
         if st.sidebar.button('Generate Report'):
             st.write('---')
             st.header('**Pandas Profiling Report**')
-            streamlit_pandas_profiling.st_profile_report(pr)
+            spp.st_profile_report(pr)
     
     if option=='Chronic Kidney Disease Dataset': 
         df=pd.read_csv('kidney_disease.csv')
-        pr = pandas_profiling.ProfileReport(df, explorative=True)
+        pr = pp.ProfileReport(df, explorative=True)
         st.header('**Dataset:**')
         st.write(df)
         if st.sidebar.button('Generate Report'):
             st.write('---')
             st.header('**Pandas Profiling Report**')
-            streamlit_pandas_profiling.st_profile_report(pr)
+            spp.st_profile_report(pr)
 
 st.sidebar.write("""
          ######  This app uses Pandas_Profiling and Streamlit to automate data profiling and exploratory data analysis. It's easy to use and can help streamline your work. [LinkedIn](https://www.linkedin.com/in/lamisghoualmi/), [Github](https://github.com/lamisghoualmi/)
