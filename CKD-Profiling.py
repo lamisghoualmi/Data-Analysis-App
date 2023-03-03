@@ -61,7 +61,7 @@ if option=='Use example dataset':
             st_profile_report(pr)
 
 st.sidebar.write("""
-         ######  This app uses Pandas_Profiling and Streamlit to automate data profiling and exploratory data analysis. It's easy to use and can help streamline your work. [LinkedIn](https://www.linkedin.com/in/lamisghoualmi/), [Github](https://github.com/lamisghoualmi/)
+         ######  This app uses Pandas_Profiling and Streamlit to automate data profiling and exploratory data analysis. It's easy to use and can help streamline your work. [LinkedIn](https://www.linkedin.com/in/lamisghoualmi/), [Github](https://lamisghoualmi.github.io/)
          """)
 
 st.sidebar.write("""
