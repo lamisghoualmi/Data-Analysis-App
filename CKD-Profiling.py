@@ -13,6 +13,14 @@ from streamlit_pandas_profiling import st_profile_report
 # pip list --format=freeze
 #C:\Users\Benk\Desktop\PowerBi\Personal Key Indicators of Heart 
 # streamlit run CKD-Profiling.py
+
+st.header('Exploratory Data Analysis APP ')
+st.write('######  How it works: ###### ')
+st.write('######  1.  Load the dataset you want to analyze or use one of the dataset examples. ###### ')
+st.write('######  2.  Click on the "Generate Report" button to create your report. ###### ')
+st.write('######  3.  Analyze your report and explore the insights it provides. ###### ')
+st.write('######  4.  Save your report as a PDF using the menu in the top right corner (Print button). ###### ')
+
 st.sidebar.header('Exploratory Data Analysis APP ')
 
 st.sidebar.image("profilingPicture.png", use_column_width=True)
@@ -28,7 +36,7 @@ if option=='Load a dataset':
     if uploaded_file is not None:
          df = pd.read_csv(uploaded_file)
          pr = df.profile_report()
-         st.header('**Dataset:**')
+         st.header('** grenn[Dataset]**')
          st.write(df)
          if st.sidebar.button('Generate Report'):
             st.write('---')
@@ -61,7 +69,7 @@ if option=='Use example dataset':
             st_profile_report(pr)
 
 st.sidebar.write("""
-         ######  This app uses Pandas_Profiling and Streamlit to automate data profiling and exploratory data analysis. It's easy to use and can help streamline your work. [LinkedIn](https://www.linkedin.com/in/lamisghoualmi/), [Github](https://lamisghoualmi.github.io/)
+         ######  This app uses Pandas_Profiling and Streamlit to automate data profiling and exploratory data analysis. It's easy to use and can help streamline your work. [LinkedIn](https://www.linkedin.com/in/lamisghoualmi/), [Github](https://github.com/lamisghoualmi/)
          """)
 
 st.sidebar.write("""
